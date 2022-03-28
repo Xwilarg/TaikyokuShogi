@@ -1,7 +1,16 @@
 import { INVALID_MOVE } from 'boardgame.io/core';
+import { BoardInfo } from './BoardInfo';
 
-export const TaikyokuShogi = {
-    setup: () => ({ cells: Array(36 * 36).fill(null) }),
+export const Game = {
+    setup: () =>
+    {
+        let info = new BoardInfo();
+        let data = Array(36 * 36).fill(null);
+        data[0] = info.getPiece("pa");
+        return {
+            cells: data
+        };
+    },
   
     moves: {
         clickCell: (G, ctx, id) => {

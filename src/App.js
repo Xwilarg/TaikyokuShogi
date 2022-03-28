@@ -1,9 +1,9 @@
 import { Client } from 'boardgame.io/client';
-import { TaikyokuShogi } from './Game';
+import { Game } from './Game';
 
-class TaikyokuShogiClient {
+class App {
     constructor(rootElement) {
-        this.client = Client({ game: TaikyokuShogi });
+        this.client = Client({ game: Game });
         this.client.start();
         this.rootElement = rootElement;
         this.drawBoard();
@@ -41,4 +41,4 @@ class TaikyokuShogiClient {
     }
 }
 
-const app = new TaikyokuShogiClient(document.getElementById('app'));
+const app = new App(document.getElementById('app'));
