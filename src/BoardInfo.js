@@ -1,4 +1,4 @@
-import { Pawn } from './Piece/Pawn';
+import { Pawn } from './Piece/Impl/Pawn';
 
 export class BoardInfo {
     constructor() {

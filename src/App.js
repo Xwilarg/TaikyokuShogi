@@ -33,6 +33,7 @@ class App {
     attachListeners() {
         const handleCellClick = event => {
             const id = parseInt(event.target.dataset.id);
+            const cellValue = state.G.cells[cellId];
             this.client.moves.clickCell(id);
         };
         const cells = this.rootElement.querySelectorAll('.cell');
