@@ -43,25 +43,45 @@ class App {
 
     update(state) {
         const info = new BoardInfo();
-        // Get all the board cells.
         const cells = this.rootElement.querySelectorAll('.cell');
-        // Update cells to display the values in game state.
         cells.forEach(cell => {
             const cellId = parseInt(cell.dataset.id);
             const cellValue = state.G.cells[cellId];
 
             if (cellValue !== null) {
+                const player = cellValue[0];
+                const piece = cellValue.substring(1);
+
                 const size = 40;
-                cell.innerHTML = `
-                <svg width="${size}" height="${size}">
-                    <line x1="0" y1="0" x2="${size}" y2="0" stroke="black" />
-                    <line x1="0" y1="0" x2="0" y2="${size/2}" stroke="black" />
-                    <line x1="${size}" y1="0" x2="${size}" y2="${size/2}" stroke="black" />
-                    <line x1="00" y1="${size/2}" x2="${size/2}" y2="${size}" stroke="black" />
-                    <line x1="${size}" y1="${size/2}" x2="${size/2}" y2="${size}" stroke="black" />
-                    <text x="3" y="${size/2}" class="small">${info.getPiece(cellValue).name}</text>
-                </svg>
-                `;
+                if (player === '0') {
+                    cell.innerHTML = `
+                    <svg width="${size}" height="${size}">
+                        <line x1="0" y1="0" x2="${size}" y2="0" stroke="black" />
+
+                        <line x1="0" y1="0" x2="0" y2="${size/2}" stroke="black" />
+                        <line x1="${size}" y1="0" x2="${size}" y2="${size/2}" stroke="black" />
+
+                        <line x1="0" y1="${size/2}" x2="${size/2}" y2="${size}" stroke="black" />
+                        <line x1="${size}" y1="${size/2}" x2="${size/2}" y2="${size}" stroke="black" />
+
+                        <text x="3" y="${size/2}" class="small">${info.getPiece(piece).name}</text>
+                    </svg>
+                    `;
+                } else {
+                    cell.innerHTML = `
+                    <svg width="${size}" height="${size}">
+                        <line x1="0" y1="${size}" x2="${size}" y2="${size}" stroke="black" />
+
+                        <line x1="0" y1="${size/2}" x2="0" y2="${size}" stroke="black" />
+                        <line x1="${size}" y1="${size/2}" x2="${size}" y2="${size}" stroke="black" />
+
+                        <line x1="0" y1="${size/2}" x2="${size/2}" y2="0" stroke="black" />
+                        <line x1="${size}" y1="${size/2}" x2="${size/2}" y2="0" stroke="black" />
+
+                        <text x="3" y="${size-size/4}" class="small">${info.getPiece(piece).name}</text>
+                    </svg>
+                    `;
+                }
             }
         });
     }

@@ -1,15 +1,15 @@
-import { Piece } from './Piece';
+import { Pawn } from './Piece/Pawn';
 
 export class BoardInfo {
     constructor() {
         this.pieces = {
-            "pa": new Piece("歩兵", "Pawn", "fW")
+            "P": Pawn
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
         this.board =  [
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa", "pa",
+            "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P",
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
