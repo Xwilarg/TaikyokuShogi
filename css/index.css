@@ -1,7 +1,10 @@
 .cell {
     border: 1px solid #555;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+    width: 45px;
+    height: 45px;
     text-align: center;
+}
+
+.small {
+    font-size: 18px;
 }

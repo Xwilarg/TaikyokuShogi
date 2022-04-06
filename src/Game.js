@@ -4,9 +4,8 @@ import { BoardInfo } from './BoardInfo';
 export const Game = {
     setup: () =>
     {
-        let info = new BoardInfo();
         let data = Array(36 * 36).fill(null);
-        data[0] = info.getPiece("pa");
+        data[0] = "pa";
         return {
             cells: data
         };
@@ -14,13 +13,6 @@ export const Game = {
   
     moves: {
         clickCell: (G, ctx, id) => {
-            if (G.cells[id] !== null) {
-                return INVALID_MOVE;
-            }
-            G.cells[id] = ctx.currentPlayer;
-        },
-        
-        drawTile: (G, ctx) => {
             if (G.cells[id] !== null) {
                 return INVALID_MOVE;
             }
