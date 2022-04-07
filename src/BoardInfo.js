@@ -4,6 +4,11 @@ import { IronGeneral } from './Piece/Impl/IronGeneral';
 import { Pawn } from './Piece/Impl/Pawn';
 import { StoneGeneral } from './Piece/Impl/StoneGeneral';
 import { Dog } from './Piece/Impl/Dog';
+import { SwoopingOwl } from './Piece/Impl/SwoopingOwl';
+import { OldRat } from './Piece/Impl/OldRat';
+import { StruttingCrow } from './Piece/Impl/StruttingCrow'
+import { TileGeneral } from './Piece/Impl/TileGeneral';
+import { SwordSoldier } from './Piece/Impl/SwordSoldier';
 
 export class BoardInfo {
     constructor() {
@@ -13,18 +18,23 @@ export class BoardInfo {
             "GB": GoBetween,
             "SG": StoneGeneral,
             " I": IronGeneral,
-            " D": Dog
+            " D": Dog,
+            "OW": SwoopingOwl,
+            "OR": OldRat,
+            "ST": StruttingCrow,
+            " T": TileGeneral,
+            "SE": SwordSoldier
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
         this.board =  [
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
+            null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, "OW", null, null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, null, "OW", null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, "EA", null, "SG", null, null, null, " I", null, null, " I", null, null, null, "SG", null, "EA", null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, "ST", null, null, null, null, null, null, null, null, null, null, null, null, "ST", null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
