@@ -70,7 +70,7 @@ class App {
                         // Display moves
                         pieceInfo.moves.forEach(m => {
                             if (m.moveType == Move_Walk) {
-                                const xPos = m.pos.x * (currPlayer === '1' ? -1 : 1);
+                                const xPos = m.pos.x * (currPlayer === '0' ? -1 : 1);
                                 const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
                                 for (let i = 1; i <= m.distance; i++) {
                                     let nextTile = id + (yPos * i * 36) + (xPos * i);
