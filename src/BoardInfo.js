@@ -9,6 +9,9 @@ import { OldRat } from './Piece/Impl/OldRat';
 import { StruttingCrow } from './Piece/Impl/StruttingCrow'
 import { TileGeneral } from './Piece/Impl/TileGeneral';
 import { SwordSoldier } from './Piece/Impl/SwordSoldier';
+import { CopperGeneral } from './Piece/Impl/CopperGeneral';
+import { FlyingGoose } from './Piece/Impl/Flying Goose';
+import { ClimbingMonkey } from './Piece/Impl/ClimbingMonkey';
 
 export class BoardInfo {
     constructor() {
@@ -23,7 +26,10 @@ export class BoardInfo {
             "OR": OldRat,
             "ST": StruttingCrow,
             " T": TileGeneral,
-            "SE": SwordSoldier
+            "SE": SwordSoldier,
+            " C": CopperGeneral,
+            "FY": FlyingGoose,
+            "CM": ClimbingMonkey
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -32,13 +38,13 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, "OW", null, null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, null, "OW", null, null, null, null,
+            null, null, null, null, "OW", "CM", null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, "CM", "OW", null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, "ST", null, null, null, null, null, null, null, null, null, null, null, null, "ST", null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, "FY", "ST", null, null, null, null, null, null, null, null, null, null, null, null, "ST", "FY", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " C", null, null, " C", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
         ];
