@@ -31,14 +31,13 @@ class App {
     }
 
     attachListeners() {
-        const handleCellClick = event => {
-            const id = parseInt(event.target.dataset.id);
-            const cellValue = state.G.cells[cellId];
-            this.client.moves.clickCell(id);
-        };
         const cells = this.rootElement.querySelectorAll('.cell');
         cells.forEach(cell => {
-            cell.onclick = handleCellClick;
+            cell.onclick = (_) =>
+            {
+                const id = parseInt(cell.dataset.id);
+                this.client.moves.clickCell(id);
+            };
         });
     }
 

@@ -26,10 +26,7 @@ export const Game = {
   
     moves: {
         clickCell: (G, ctx, id) => {
-            if (G.cells[id] !== null) {
-                return INVALID_MOVE;
-            }
-            G.cells[id] = ctx.currentPlayer;
+            G.cells[id] = ctx.currentPlayer + "P";
         }
     },
 
