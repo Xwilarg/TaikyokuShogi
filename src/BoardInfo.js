@@ -25,6 +25,12 @@ import { OldMonkey } from './Piece/Impl/OldMonkey';
 import { GoldGeneral } from './Piece/Impl/GoldGeneral';
 import { ViolentWolf } from './Piece/Impl/ViolentWolf';
 import { FerociousLeopard } from './Piece/Impl/FerociousLeopard';
+import { BlindMonkey } from './Piece/Impl/BlindMonkey';
+import { BlindBear } from './Piece/Impl/BlindBear';
+import { DrunkenElephant } from './Piece/Impl/DrunkenElephant';
+import { NeighboringKing } from './Piece/Impl/NeighboringKing';
+import { RushingBoar } from './Piece/Impl/RushingBoar';
+import { Deva } from './Piece/Impl/Deva';
 
 export class BoardInfo {
     constructor() {
@@ -55,7 +61,13 @@ export class BoardInfo {
             "OM": OldMonkey,
             " G": GoldGeneral,
             "NT": ViolentWolf,
-            "FL": FerociousLeopard
+            "FL": FerociousLeopard,
+            "BM": BlindMonkey,
+            "BB": BlindBear,
+            "DE": DrunkenElephant,
+            "NK": NeighboringKing,
+            "": RushingBoar, // TODO
+            "DV": Deva
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -64,14 +76,14 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, "OW", "CM", "CS", null, null, null, null, null, null, "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", null, null, null, null, null, null, "CS", "CM", "OW", null, null, null, null,
+            null, null, null, null, "OW", "CM", "CS", null, "BM", null, null, null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, null, null, "BM", null, "CS", "CM", "OW", null, null, null, null,
             null, null, null, null, null, null, null, "EW", null, "CK", "OM", "CC", null, null, "VS", "NT", null, null, null, null, "NT", "VS", null, null, "CC", "OM", "CK", null, "EW", null, null, null, null, null, null, null,
             null, null, null, null, null, null, "FL", null, null, null, "FY", "ST", "BI", null, null, null, null, null, null, null, null, null, null, "BI", "ST", "FY", null, null, null, "FL", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " C", null, null, " C", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " S", null, null, " S", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " S", "NK", "DE", " S", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " G", null, null, " G", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
         ];
     }
