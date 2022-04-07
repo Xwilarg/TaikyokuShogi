@@ -12,6 +12,11 @@ import { SwordSoldier } from './Piece/Impl/SwordSoldier';
 import { CopperGeneral } from './Piece/Impl/CopperGeneral';
 import { FlyingGoose } from './Piece/Impl/Flying Goose';
 import { ClimbingMonkey } from './Piece/Impl/ClimbingMonkey';
+import { RecliningDragon } from './Piece/Impl/RecliningDragon';
+import { CoiledSerpent } from './Piece/Impl/CoiledSerpent';
+import { FlyingCock } from './Piece/Impl/FlyingCock';
+import { CatSword } from './Piece/Impl/CatSword';
+import { EvilWolf } from './Piece/Impl/EvilWolf';
 
 export class BoardInfo {
     constructor() {
@@ -29,7 +34,12 @@ export class BoardInfo {
             "SE": SwordSoldier,
             " C": CopperGeneral,
             "FY": FlyingGoose,
-            "CM": ClimbingMonkey
+            "CM": ClimbingMonkey,
+            "RD": RecliningDragon,
+            "SN": CoiledSerpent,
+            "CK": FlyingCock,
+            "CS": CatSword,
+            "EW": EvilWolf
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -38,8 +48,8 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, "OW", "CM", null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, null, "OR", null, null, null, null, null, null, null, "CM", "OW", null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, "OW", "CM", "CS", null, null, null, null, null, null, "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", null, null, null, null, null, null, "CS", "CM", "OW", null, null, null, null,
+            null, null, null, null, null, null, null, "EW", null, "CK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "CK", null, "EW", null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, "FY", "ST", null, null, null, null, null, null, null, null, null, null, null, null, "ST", "FY", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
