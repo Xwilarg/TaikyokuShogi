@@ -22,6 +22,9 @@ import { ViolentStag } from './Piece/Impl/ViolentStag';
 import { BlindDog } from './Piece/Impl/BlindDog';
 import { ChineseCock } from './Piece/Impl/ChineseCock';
 import { OldMonkey } from './Piece/Impl/OldMonkey';
+import { GoldGeneral } from './Piece/Impl/GoldGeneral';
+import { ViolentWolf } from './Piece/Impl/ViolentWolf';
+import { FerociousLeopard } from './Piece/Impl/FerociousLeopard';
 
 export class BoardInfo {
     constructor() {
@@ -49,7 +52,10 @@ export class BoardInfo {
             "VS": ViolentStag,
             "BI": BlindDog,
             "CC": ChineseCock,
-            "OM": OldMonkey
+            "OM": OldMonkey,
+            " G": GoldGeneral,
+            "NT": ViolentWolf,
+            "FL": FerociousLeopard
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -59,14 +65,14 @@ export class BoardInfo {
             null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, "OW", "CM", "CS", null, null, null, null, null, null, "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", null, null, null, null, null, null, "CS", "CM", "OW", null, null, null, null,
-            null, null, null, null, null, null, null, "EW", null, "CK", "OM", "CC", null, null, "VS", null, null, null, null, null, null, "VS", null, null, "CC", "OM", "CK", null, "EW", null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, "FY", "ST", "BI", null, null, null, null, null, null, null, null, null, null, "BI", "ST", "FY", null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, "EW", null, "CK", "OM", "CC", null, null, "VS", "NT", null, null, null, null, "NT", "VS", null, null, "CC", "OM", "CK", null, "EW", null, null, null, null, null, null, null,
+            null, null, null, null, null, null, "FL", null, null, null, "FY", "ST", "BI", null, null, null, null, null, null, null, null, null, null, "BI", "ST", "FY", null, null, null, "FL", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " C", null, null, " C", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " S", null, null, " S", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " G", null, null, " G", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
         ];
     }
 
