@@ -8,3 +8,11 @@
 .small {
     font-size: 18px;
 }
+
+.selected {
+    background-color: lightskyblue;
+}
+
+.possible-move {
+    background-color: greenyellow;
+}

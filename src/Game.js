@@ -25,8 +25,9 @@ export const Game = {
     },
   
     moves: {
-        clickCell: (G, ctx, id) => {
-            G.cells[id] = ctx.currentPlayer + "P";
+        movePiece: (G, ctx, oldId, newId) => {
+            G.cells[newId] = G.cells[oldId];
+            G.cells[oldId] = null;
         }
     },
 

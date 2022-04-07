@@ -1,16 +1,24 @@
 import { Client } from 'boardgame.io/client';
 import { BoardInfo } from './BoardInfo';
 import { Game } from './Game';
+import { Move_Walk } from './Piece/MoveType';
 
 class App {
     constructor(rootElement) {
         this.client = Client({ game: Game });
         this.client.start();
         this.rootElement = rootElement;
+
         this.createBoard();
         this.attachListeners();
 
-        this.client.subscribe(state => this.update(state));
+        this.client.subscribe(state =>
+        {
+            this.state = state;
+            this.update(state);
+        });
+
+        this.selected = null;
     }
 
     createBoard() {
@@ -30,13 +38,58 @@ class App {
         `;
     }
 
+    cleanTiles() {
+        const cells = this.rootElement.querySelectorAll('.cell');
+        cells.forEach(e => {
+            e.classList.remove("possible-move");
+            e.classList.remove("selected");
+        });
+        this.selected = null;
+    }
+
     attachListeners() {
         const cells = this.rootElement.querySelectorAll('.cell');
         cells.forEach(cell => {
             cell.onclick = (_) =>
             {
                 const id = parseInt(cell.dataset.id);
-                this.client.moves.clickCell(id);
+                const value = this.state.G.cells[id];
+                if (value !== null) { // We clicked on a piece
+                    this.cleanTiles();
+
+                    const currPlayer = this.state.ctx.currentPlayer;
+                    if (value[0] === currPlayer) { // This piece belong to the current player
+                        // Highlight the current piece
+                        cell.classList.add("selected");
+                        this.selected = id;
+
+                        const info = new BoardInfo();
+                        const piece = value.substring(1);
+                        const pieceInfo = info.getPiece(piece);
+
+                        // Display moves
+                        pieceInfo.moves.forEach(m => {
+                            if (m.moveType == Move_Walk) {
+                                const xPos = m.pos.x * (currPlayer === '1' ? -1 : 1);
+                                const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
+                                for (let i = 1; i <= m.distance; i++) {
+                                    let nextTile = id + (yPos * i * 36) + (xPos * i);
+                                    if (this.state.G.cells[nextTile] !== null)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        cells[nextTile].classList.add("possible-move");
+                                    }
+                                }
+                            }
+                        });
+                    }
+                } else if (cell.classList.contains("possible-move")) { // We clicked on a highlighted tile showing an available move
+                    this.client.moves.movePiece(this.selected, id);
+                    this.cleanTiles();
+                }
             };
         });
     }
@@ -82,6 +135,8 @@ class App {
                     </svg>
                     `;
                 }
+            } else {
+                cell.innerHTML = "";
             }
         });
     }
