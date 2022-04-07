@@ -16,3 +16,7 @@
 .possible-move {
     background-color: greenyellow;
 }
+
+svg text{
+    text-anchor: middle;
+}

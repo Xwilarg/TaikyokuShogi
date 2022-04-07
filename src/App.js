@@ -117,7 +117,7 @@ class App {
                         <line x1="0" y1="${size/2}" x2="${size/2}" y2="${size}" stroke="black" />
                         <line x1="${size}" y1="${size/2}" x2="${size/2}" y2="${size}" stroke="black" />
 
-                        <text x="3" y="${size/2}" class="small">${info.getPiece(piece).name}</text>
+                        <text x="50%" y="50%" class="small">${info.getPiece(piece).name}</text>
                     </svg>
                     `;
                 } else {
@@ -131,7 +131,7 @@ class App {
                         <line x1="0" y1="${size/2}" x2="${size/2}" y2="0" stroke="black" />
                         <line x1="${size}" y1="${size/2}" x2="${size/2}" y2="0" stroke="black" />
 
-                        <text x="3" y="${size-size/4}" class="small">${info.getPiece(piece).name}</text>
+                        <text x="50%" y="50%" class="small">${info.getPiece(piece).name}</text>
                     </svg>
                     `;
                 }
