@@ -69,8 +69,8 @@ class App {
 
                         // Display moves
                         const max = (36 * 36) - 1;
-                        let previous = id;
                         pieceInfo.moves.forEach(m => {
+                            let previous = id;
                             if (m.moveType == Move_Walk) {
                                 const xPos = m.pos.x * (currPlayer === '0' ? -1 : 1);
                                 const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
