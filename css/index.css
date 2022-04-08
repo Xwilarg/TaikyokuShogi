@@ -17,6 +17,10 @@
     background-color: greenyellow;
 }
 
+.possible-attack {
+    background-color: lightcoral;
+}
+
 svg text{
     text-anchor: middle;
 }

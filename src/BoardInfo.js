@@ -91,6 +91,10 @@ import { WhiteHorse } from './Piece/Impl/WhiteHorse';
 import { BirdOfParadise } from './Piece/Impl/BirdOfParadise';
 import { MultiGeneral } from './Piece/Impl/MultiGeneral';
 import { Rook } from './Piece/Impl/Rook';
+import { Soldier } from './Piece/Impl/Soldier';
+import { RunningChariot } from './Piece/Impl/RunningChariot';
+import { SquareMover } from './Piece/Impl/SquareMover';
+import { GlidingSwallow } from './Piece/Impl/GlidingSwallow';
 
 export class BoardInfo {
     constructor() {
@@ -187,7 +191,11 @@ export class BoardInfo {
             "WH": WhiteHorse,
             "⿰古寺⿱時鳥": BirdOfParadise,
             "雜将": MultiGeneral,
-            " R": Rook
+            " R": Rook,
+            "SO": Soldier,
+            "RH": RunningChariot,
+            "SQ": SquareMover,
+            "燕行": GlidingSwallow
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -196,10 +204,10 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, null, null, null, null, null, null, "BN", null, null, "SE", null, null, null, null, "TG", "SC", null, null, "SC", "TG", null, null, null, null, "SE", null, null, "BN", null, null, null, null, null, null, null,
             null, null, null, "WN", "RE", " M", null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, " M", "RE", "WN", null, null, null,
-            null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", "OC", null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, "OC", "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
+            null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", "OC", null, "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", null, "OC", "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
             null, null, null, "DO", "FH", "VB", "AB", "EW", null, "CK", "OM", "CC", "WS", "ES", "VS", "NT", null, null, null, null, "NT", "VS", "SU", "NB", "CC", "OM", "CK", null, "EW", null, "VB", "FH", "DO", null, null, null,
             null, null, null, null, "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", null, null, null, null, null, null,
-            null, "WH", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "WH",
+            null, "WH", null, null, null, null, null, null, "SO", null, null, null, "RH", null, null, null, null, null, null, null, null, null, null, "RH", null, null, null, "SO", null, null, null, null, null, null, null, "WH",
             null, null, null, " R", null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, " R", null, null, null,
             null, null, null, "PI", "CG", "PG", " H", " O", null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, " O", " H", "PG", "CG", "PI", null, null, null,
             null, "SI", null, null, null, null, null, null, "BO", null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, "BO", null, null, null, null, null, null, "SI", null,

@@ -42,6 +42,7 @@ class App {
         const cells = this.rootElement.querySelectorAll('.cell');
         cells.forEach(e => {
             e.classList.remove("possible-move");
+            e.classList.remove("possible-attack");
             e.classList.remove("selected");
         });
         this.selected = null;
@@ -54,7 +55,10 @@ class App {
             {
                 const id = parseInt(cell.dataset.id);
                 const value = this.state.G.cells[id];
-                if (value !== null) { // We clicked on a piece
+                if (cell.classList.contains("possible-move") || cell.classList.contains("possible-attack")) { // We clicked on a highlighted tile showing an available move
+                    this.client.moves.movePiece(this.selected, id);
+                    this.cleanTiles();
+                } else if (value !== null) { // We clicked on a piece
                     this.cleanTiles();
 
                     const currPlayer = this.state.ctx.currentPlayer;
@@ -76,8 +80,15 @@ class App {
                                 const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
                                 for (let i = 1; i <= m.distance; i++) {
                                     let nextTile = id + (yPos * i * 36) + (xPos * i);
-                                    if (this.state.G.cells[nextTile] !== null
-                                        || nextTile < 0 || nextTile > max // We are out of the board on the lines
+                                    if (this.state.G.cells[nextTile] !== null)
+                                    {
+                                        if (this.state.G.cells[nextTile][0] !== value[0])
+                                        {
+                                            cells[nextTile].classList.add("possible-attack");
+                                        }
+                                        break;
+                                    }
+                                    else if (nextTile < 0 || nextTile > max // We are out of the board on the lines
                                         || Math.abs((nextTile % 36) - (previous % 36)) > 1) // We are out of board on the columns
                                     {
                                         break;
@@ -91,9 +102,6 @@ class App {
                             }
                         });
                     }
-                } else if (cell.classList.contains("possible-move")) { // We clicked on a highlighted tile showing an available move
-                    this.client.moves.movePiece(this.selected, id);
-                    this.cleanTiles();
                 }
             };
         });
