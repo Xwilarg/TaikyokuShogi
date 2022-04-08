@@ -86,6 +86,11 @@ import { Oxcart } from './Piece/Impl/Oxcart';
 import { SavageTiger } from './Piece/Impl/Savagetiger';
 import { ReverseChariot } from './Piece/Impl/ReverseChariot';
 import { SideDragon } from './Piece/Impl/SideDragon';
+import { MountainWitch } from './Piece/Impl/MountainWitch';
+import { WhiteHorse } from './Piece/Impl/WhiteHorse';
+import { BirdOfParadise } from './Piece/Impl/BirdOfParadise';
+import { MultiGeneral } from './Piece/Impl/MultiGeneral';
+import { Rook } from './Piece/Impl/Rook';
 
 export class BoardInfo {
     constructor() {
@@ -177,7 +182,12 @@ export class BoardInfo {
             "OC": Oxcart,
             "TG": SavageTiger,
             "RV": ReverseChariot,
-            "SI": SideDragon
+            "SI": SideDragon,
+            "山母": MountainWitch,
+            "WH": WhiteHorse,
+            "⿰古寺⿱時鳥": BirdOfParadise,
+            "雜将": MultiGeneral,
+            " R": Rook
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -189,8 +199,8 @@ export class BoardInfo {
             null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", "OC", null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, "OC", "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
             null, null, null, "DO", "FH", "VB", "AB", "EW", null, "CK", "OM", "CC", "WS", "ES", "VS", "NT", null, null, null, null, "NT", "VS", "SU", "NB", "CC", "OM", "CK", null, "EW", null, "VB", "FH", "DO", null, null, null,
             null, null, null, null, "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, "WH", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "WH",
+            null, null, null, " R", null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, " R", null, null, null,
             null, null, null, "PI", "CG", "PG", " H", " O", null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, " O", " H", "PG", "CG", "PI", null, null, null,
             null, "SI", null, null, null, null, null, null, "BO", null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, "BO", null, null, null, null, null, null, "SI", null,
             "RV", "WE", "TD", null, "CO", null, null, "MS", null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", null, null, null, null, null, null, "MS", null, null, "CO", null, "TD", "FG", "RV",
