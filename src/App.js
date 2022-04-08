@@ -68,19 +68,24 @@ class App {
                         const pieceInfo = info.getPiece(piece);
 
                         // Display moves
+                        const max = (36 * 36) - 1;
+                        let previous = id;
                         pieceInfo.moves.forEach(m => {
                             if (m.moveType == Move_Walk) {
                                 const xPos = m.pos.x * (currPlayer === '0' ? -1 : 1);
                                 const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
                                 for (let i = 1; i <= m.distance; i++) {
                                     let nextTile = id + (yPos * i * 36) + (xPos * i);
-                                    if (this.state.G.cells[nextTile] !== null)
+                                    if (this.state.G.cells[nextTile] !== null
+                                        || nextTile < 0 || nextTile > max // We are out of the board on the lines
+                                        || Math.abs((nextTile % 36) - (previous % 36)) > 1) // We are out of board on the columns
                                     {
                                         break;
                                     }
                                     else
                                     {
                                         cells[nextTile].classList.add("possible-move");
+                                        previous = nextTile;
                                     }
                                 }
                             }
