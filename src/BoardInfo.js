@@ -81,6 +81,9 @@ import { LeopardKing } from './Piece/Impl/LeopardKing';
 import { TurtleDove } from './Piece/Impl/TurtleDove';
 import { CrossbowSoldier } from './Piece/Impl/CrossbowSoldier';
 import { BurningSoldier } from './Piece/Impl/BurningSoldier';
+import { Lance } from './Piece/Impl/Lance';
+import { Oxcart } from './Piece/Impl/Oxcart';
+import { SavageTiger } from './Piece/Impl/Savagetiger';
 
 export class BoardInfo {
     constructor() {
@@ -167,16 +170,19 @@ export class BoardInfo {
             "豹王": LeopardKing,
             "TD": TurtleDove,
             "SC": CrossbowSoldier,
-            "BN": BurningSoldier
+            "BN": BurningSoldier,
+            " L": Lance,
+            "OC": Oxcart,
+            "TG": SavageTiger
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
         this.board =  [
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
-            null, null, null, null, null, null, null, "BN", null, null, "SE", null, null, null, null, null, "SC", null, null, "SC", null, null, null, null, null, "SE", null, null, "BN", null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, "BN", null, null, "SE", null, null, null, null, "TG", "SC", null, null, "SC", "TG", null, null, null, null, "SE", null, null, "BN", null, null, null, null, null, null, null,
             null, null, null, "WN", "RE", " M", null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, " M", "RE", "WN", null, null, null,
-            null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", null, null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, null, "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
+            null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", "OC", null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, "OC", "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
             null, null, null, "DO", "FH", "VB", "AB", "EW", null, "CK", "OM", "CC", "WS", "ES", "VS", "NT", null, null, null, null, "NT", "VS", "SU", "NB", "CC", "OM", "CK", null, "EW", null, "VB", "FH", "DO", null, null, null,
             null, null, null, null, "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
@@ -184,7 +190,7 @@ export class BoardInfo {
             null, null, null, "PI", "CG", "PG", " H", " O", null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, " O", " H", "PG", "CG", "PI", null, null, null,
             null, null, null, null, null, null, null, null, "BO", null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, "BO", null, null, null, null, null, null, null, null,
             null, "WE", "TD", null, "CO", null, null, "MS", null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", null, null, null, null, null, null, "MS", null, null, "CO", null, "TD", "FG", null,
-            null, null, null, null, null, null, null, "BC", null, null, null, null, null, null, null, "LG", " G", " K", "CP", " G", "RG", null, null, null, null, null, null, null, "BC", null, null, null, null, null, null, null
+            " L", null, null, null, null, null, null, "BC", null, null, null, null, null, null, null, "LG", " G", " K", "CP", " G", "RG", null, null, null, null, null, null, null, "BC", null, null, null, null, null, null, " L"
         ];
     }
 
