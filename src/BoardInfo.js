@@ -60,6 +60,14 @@ import { FierceEagle } from './Piece/Impl/FierceEagle';
 import { GuardianOfTheGods } from './Piece/Impl/GuardianOfTheGods';
 import { Wrestler } from './Piece/Impl/Wrestler';
 import { CaptiveCadet } from './Piece/Impl/CaptiveCadet';
+import { HorseGeneral } from './Piece/Impl/HorseGeneral';
+import { OxGeneral } from './Piece/Impl/OxGeneral';
+import { FireGeneral } from './Piece/Impl/FireGeneral';
+import { WaterGeneral } from './Piece/Impl/WaterGeneral';
+import { MountainGeneral } from './Piece/Impl/MountainGeneral';
+import { BuddhistDevil } from './Piece/Impl/BuddhistDevil';
+import { WindGeneral } from './Piece/Impl/WindGeneral';
+import { RiverGeneral } from './Piece/Impl/RiverGeneral';
 
 export class BoardInfo {
     constructor() {
@@ -125,7 +133,15 @@ export class BoardInfo {
             "EG": FierceEagle,
             "GU": GuardianOfTheGods,
             "WR": Wrestler,
-            "CT": CaptiveCadet
+            "CT": CaptiveCadet,
+            " H": HorseGeneral,
+            " O": OxGeneral,
+            " F": FireGeneral,
+            "WG": WaterGeneral,
+            " M": MountainGeneral,
+            "BD": BuddhistDevil,
+            "WN": WindGeneral,
+            "RE": RiverGeneral
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -133,15 +149,15 @@ export class BoardInfo {
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, null, null, null, null, null, null,
+            null, null, null, "WN", "RE", " M", null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, " M", "RE", "WN", null, null, null,
             null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", null, null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, null, "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
             null, null, null, "DO", "FH", "VB", "AB", "EW", null, "CK", "OM", "CC", "WS", "ES", "VS", "NT", null, null, null, null, "NT", "VS", "SU", "NB", "CC", "OM", "CK", null, "EW", null, "VB", "FH", "DO", null, null, null,
-            null, null, null, null, "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", null, null, null, null, null, null, null, null, null, null, "BI", "ST", "FY", "PS", null, "EG", "FL", null, null, null, null, null, null,
+            null, null, null, null, "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, " H", " O", null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, " O", " H", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, null, null, null, null, null, null, null, null, null,
-            null, "WE", null, null, null, null, null, null, null, null, null, null, null, null, null, "WR", " S", "NK", "DE", " S", "GU", null, null, null, null, null, null, null, null, null, null, null, null, null, "FG", null,
+            null, "WE", null, null, null, null, null, null, null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", null, null, null, null, null, null, null, null, null, null, null, null, null, "FG", null,
             null, null, null, null, null, null, null, "BC", null, null, null, null, null, null, null, "LG", " G", " K", "CP", " G", "RG", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
         ];
     }
