@@ -1,4 +1,3 @@
-import { INVALID_MOVE } from 'boardgame.io/core';
 import { BoardInfo } from './BoardInfo';
 
 export const Game = {

@@ -84,6 +84,8 @@ import { BurningSoldier } from './Piece/Impl/BurningSoldier';
 import { Lance } from './Piece/Impl/Lance';
 import { Oxcart } from './Piece/Impl/Oxcart';
 import { SavageTiger } from './Piece/Impl/Savagetiger';
+import { ReverseChariot } from './Piece/Impl/ReverseChariot';
+import { SideDragon } from './Piece/Impl/SideDragon';
 
 export class BoardInfo {
     constructor() {
@@ -173,7 +175,9 @@ export class BoardInfo {
             "BN": BurningSoldier,
             " L": Lance,
             "OC": Oxcart,
-            "TG": SavageTiger
+            "TG": SavageTiger,
+            "RV": ReverseChariot,
+            "SI": SideDragon
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -188,8 +192,8 @@ export class BoardInfo {
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, "PI", "CG", "PG", " H", " O", null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, " O", " H", "PG", "CG", "PI", null, null, null,
-            null, null, null, null, null, null, null, null, "BO", null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, "BO", null, null, null, null, null, null, null, null,
-            null, "WE", "TD", null, "CO", null, null, "MS", null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", null, null, null, null, null, null, "MS", null, null, "CO", null, "TD", "FG", null,
+            null, "SI", null, null, null, null, null, null, "BO", null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, "BO", null, null, null, null, null, null, "SI", null,
+            "RV", "WE", "TD", null, "CO", null, null, "MS", null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", null, null, null, null, null, null, "MS", null, null, "CO", null, "TD", "FG", "RV",
             " L", null, null, null, null, null, null, "BC", null, null, null, null, null, null, null, "LG", " G", " K", "CP", " G", "RG", null, null, null, null, null, null, null, "BC", null, null, null, null, null, null, " L"
         ];
     }
