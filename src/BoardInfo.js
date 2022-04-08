@@ -45,7 +45,7 @@ import { FlyingHorse } from './Piece/Impl/FlyingHorse';
 import { BeastCadet } from './Piece/Impl/BeastCadet';
 import { King } from './Piece/Impl/King';
 import { FragrantElephant } from './Piece/Impl/FragrantElephant';
-import { WhiteElephant } from './Piece/Impl/Whiteelephant';
+import { WhiteElephant } from './Piece/Impl/WhiteElephant';
 import { RushingBird } from './Piece/Impl/RushingBird';
 import { AngryBoar } from './Piece/Impl/AngryBoar';
 import { ViolentBear } from './Piece/Impl/ViolentBear';
@@ -68,6 +68,8 @@ import { MountainGeneral } from './Piece/Impl/MountainGeneral';
 import { BuddhistDevil } from './Piece/Impl/BuddhistDevil';
 import { WindGeneral } from './Piece/Impl/WindGeneral';
 import { RiverGeneral } from './Piece/Impl/RiverGeneral';
+import { Yaksha } from './Piece/Impl/Yaksha';
+import { SwordGeneral } from './Piece/Impl/SwordGeneral';
 
 export class BoardInfo {
     constructor() {
@@ -141,7 +143,9 @@ export class BoardInfo {
             " M": MountainGeneral,
             "BD": BuddhistDevil,
             "WN": WindGeneral,
-            "RE": RiverGeneral
+            "RE": RiverGeneral,
+            "YA": Yaksha,
+            "刀将": SwordGeneral
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -157,7 +161,7 @@ export class BoardInfo {
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, " H", " O", null, null, null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, null, null, " O", " H", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, null, null, null, null, null, null, null, null, null,
-            null, "WE", null, null, null, null, null, null, null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", null, null, null, null, null, null, null, null, null, null, null, null, null, "FG", null,
+            null, "WE", null, null, null, null, null, null, null, null, null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", null, null, null, null, null, null, null, null, null, null, null, null, "FG", null,
             null, null, null, null, null, null, null, "BC", null, null, null, null, null, null, null, "LG", " G", " K", "CP", " G", "RG", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
         ];
     }
