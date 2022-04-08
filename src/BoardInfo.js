@@ -39,6 +39,8 @@ import { RightGeneral } from './Piece/Impl/Right General';
 import { BearsEyes } from './Piece/Impl/BearsEyes';
 import { VenomousWolf } from './Piece/Impl/VenomousWolf';
 import { WoodGeneral } from './Piece/Impl/WoodGeneral';
+import { Donkey } from './Piece/Impl/Donkey';
+import { EnchantedBadger } from './Piece/Impl/EnchantedBadger';
 
 export class BoardInfo {
     constructor() {
@@ -83,7 +85,9 @@ export class BoardInfo {
             "RG": RightGeneral,
             "熊眼": BearsEyes,
             "毒狼": VenomousWolf,
-            "GN": WoodGeneral
+            "GN": WoodGeneral,
+            "DO": Donkey,
+            "EB": EnchantedBadger
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -92,8 +96,8 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "SE", null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, null, null, null, null, null, null,
-            null, null, null, null, "OW", "CM", "CS", null, "BM", "BT", null, null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, null, "BT", "BM", null, "CS", "CM", "OW", null, null, null, null,
-            null, null, null, null, null, null, null, "EW", null, "CK", "OM", "CC", null, null, "VS", "NT", null, null, null, null, "NT", "VS", null, null, "CC", "OM", "CK", null, "EW", null, null, null, null, null, null, null,
+            null, null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", null, null, "BB", "OR", null, "SN", "RD", null, null, "RD", "SN", null, "OR", "BB", null, null, "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, null,
+            null, null, null, "DO", null, null, null, "EW", null, "CK", "OM", "CC", null, null, "VS", "NT", null, null, null, null, "NT", "VS", null, null, "CC", "OM", "CK", null, "EW", null, null, null, "DO", null, null, null,
             null, null, null, null, null, null, "FL", null, null, null, "FY", "ST", "BI", null, null, null, null, null, null, null, null, null, null, "BI", "ST", "FY", null, null, null, "FL", null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "DV", "DS", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
