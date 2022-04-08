@@ -80,17 +80,17 @@ class App {
                                 const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
                                 for (let i = 1; i <= m.distance; i++) {
                                     let nextTile = id + (yPos * i * 36) + (xPos * i);
-                                    if (this.state.G.cells[nextTile] !== null)
+                                    if (nextTile < 0 || nextTile > max // We are out of the board on the lines
+                                        || Math.abs((nextTile % 36) - (previous % 36)) > 1) // We are out of board on the columns
+                                    {
+                                        break;
+                                    }
+                                    else if (this.state.G.cells[nextTile] !== null)
                                     {
                                         if (this.state.G.cells[nextTile][0] !== value[0])
                                         {
                                             cells[nextTile].classList.add("possible-attack");
                                         }
-                                        break;
-                                    }
-                                    else if (nextTile < 0 || nextTile > max // We are out of the board on the lines
-                                        || Math.abs((nextTile % 36) - (previous % 36)) > 1) // We are out of board on the columns
-                                    {
                                         break;
                                     }
                                     else
