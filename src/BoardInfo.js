@@ -162,6 +162,32 @@ import { FlyingFalcon } from './Piece/Impl/FlyingFalcon';
 import { BurningChariot } from './Piece/Impl/BurningChariot';
 import { DragonKing } from './Piece/Impl/DragonKing';
 import { DragonHorse } from './Piece/Impl/DragonHorse';
+import { FreeBoar } from './Piece/Impl/FreeBoar';
+import { WindDragon } from './Piece/Impl/WindDragon';
+import { CloudDragon } from './Piece/Impl/CloudDragon';
+import { RainDragon } from './Piece/Impl/RainDragon';
+import { FireOx } from './Piece/Impl/FireOx';
+import { ViolentWind } from './Piece/Impl/ViolentWind';
+import { ChineseRiver } from './Piece/Impl/ChineseRiver';
+import { VerticalTiger } from './Piece/Impl/VerticalTiger';
+import { WindSnappingTurtle } from './Piece/Impl/WindSnappingTurtle';
+import { RunningTile } from './Piece/Impl/RunningTile';
+import { RunningTiger } from './Piece/Impl/RunningTiger';
+import { RunningBear } from './Piece/Impl/RunningBear';
+import { GoldenDeer } from './Piece/Impl/GoldenDeer';
+import { SilverRabbit } from './Piece/Impl/SilverRabbit';
+import { WalkingHeron } from './Piece/Impl/WalkingHeron';
+import { YoungBird } from './Piece/Impl/YoungBird';
+import { RightDragon } from './Piece/Impl/RightDragon';
+import { LeftDragon } from './Piece/Impl/LeftDragon';
+import { BlueDragon } from './Piece/Impl/BlueDragon';
+import { WhiteTiger } from './Piece/Impl/WhiteTiger';
+import { DivineTiger } from './Piece/Impl/DivineTiger';
+import { DivineDragon } from './Piece/Impl/DivineDragon';
+import { RunningStag } from './Piece/Impl/RunningStag';
+import { ReadStandard } from './Piece/Impl/RearStandard';
+import { CeramicDove } from './Piece/Impl/CeramicDove';
+import { ElephantKing } from './Piece/Impl/ElephantKing';
 
 export class BoardInfo {
     constructor() {
@@ -329,7 +355,33 @@ export class BoardInfo {
             "飛鷹": FlyingFalcon,
             "炮車": BurningChariot,
             "DK": DragonKing,
-            "DH": DragonHorse
+            "DH": DragonHorse,
+            "奔猪": FreeBoar,
+            "WD": WindDragon,
+            "CL": CloudDragon,
+            "RA": RainDragon,
+            "火牛": FireOx,
+            "暴風": ViolentWind,
+            "淮川": ChineseRiver,
+            "VT": VerticalTiger,
+            "風鼈": WindSnappingTurtle,
+            "走瓦": RunningTile,
+            "RT": RunningTiger,
+            "BA": RunningBear,
+            "GL": GoldenDeer,
+            "SR": SilverRabbit,
+            "歩䳲": WalkingHeron,
+            "𦬨鳥": YoungBird,
+            "RI": RightDragon,
+            "LE": LeftDragon,
+            "BL": BlueDragon,
+            "WT": WhiteTiger,
+            "神虎": DivineTiger,
+            "神龍": DivineDragon,
+            "RN": RunningStag,
+            "RS": ReadStandard,
+            "CD": CeramicDove,
+            "象王": ElephantKing
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -338,14 +390,14 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             "LC", "MK", "VM", "OX", null, "VP", "VH", "BN", "DH", "DK", "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", "DK", "DH", "BN", "VH", "VP", null, "OX", "VM", "MK", "RC",
             null, null, null, "WN", "RE", " M", null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, " M", "RE", "WN", null, null, null,
-            "EC", null, "EB", null, "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", null, "EB", "VI", "EC",
+            "EC", "BL", "EB", null, "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", null, "EB", "VI", "EC",
             "TC", null, "SX", "DO", "FH", "VB", "AB", "EW", null, "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", null, "EW", null, "VB", "FH", "DO", "SX", null, "TC",
             "WC", "WH", "犬L", "SM", "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", null, "PR", "SM", "犬R", "WH", "WC",
-            null, null, " B", " R", "WF", null, null, null, "SO", null, null, null, "RH", "HE", "VO", null, null, "DV", "DS", null, null, "VO",  "HE", "RH", null, null, null, "SO", null, null, null, "WF", " R", " B", null, null,
-            null, null, null, "PI", "CG", "PG", " H", " O", null, "SA", null, null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, null, "SA", null, " O", " H", "PG", "CG", "PI", null, null, null,
-            null, "SI", null, "RW", null, null, "LT", null, "BO", null, null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, null, "BO", null, "TT", null, null, "RW", null, "SI", null,
-            "RV", "WE", "TD", "FS", "CO", null, null, "MS", "RP", "RU", null, null, null, null, "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", null, null, null, null, "RU", "RP", "MS", null, null, "CO", "FS", "TD", "FG", "RV",
-            " L", "TS", "RR", " W", null, null, null, "BC", null, null, null, null, null, " Q", null, "LG", " G", " K", "CP", " G", "RG", null, " Q", null, null, null, null, null, "BC", null, null, null, " W", "RR", null, " L"
+            null, null, " B", " R", "WF", null, null, "VT", "SO", null, "CL", null, "RH", "HE", "VO", null, null, "DV", "DS", null, null, "VO",  "HE", "RH", null, "CL", null, "SO", "VT", null, null, "WF", " R", " B", null, null,
+            null, null, null, "PI", "CG", "PG", " H", " O", null, "SA", "SR", null, null, "CT", null, null, null, null, null, null, null, null, "CT", null, null, "SR", "SA", null, " O", " H", "PG", "CG", "PI", null, null, null,
+            null, "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", null,
+            "RV", "WE", "TD", "FS", "CO", "RA", null, "MS", "RP", "RU", null, null, "RT", "BA", "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", "BA", "RT", null, null, "RU", "RP", "MS", null, "RA", "CO", "FS", "TD", "FG", "RV",
+            " L", "TS", "RR", " W", null, null, null, "BC", null, null, null, "CD", null, " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", null, null, null, null, null, "BC", null, null, null, " W", "RR", "WT", " L"
         ];
     }
 
