@@ -138,6 +138,9 @@ import { SideWolf } from './Piece/Impl/SideWolf';
 import { SideOx } from './Piece/Impl/Side Ox';
 import { SideMover } from './Piece/Impl/SideMover';
 import { SideMonkey } from './Piece/Impl/SideMonkey';
+import { DivineSparrow } from './Piece/Impl/DivineSparrow';
+import { PloddingOx } from './Piece/Impl/PloddingOx';
+import { SwallowsWings } from './Piece/Impl/SwallowsWings';
 
 export class BoardInfo {
     constructor() {
@@ -281,7 +284,10 @@ export class BoardInfo {
             "WF": SideWolf,
             "SX": SideOx,
             "SM": SideMover,
-            "MK": SideMonkey
+            "MK": SideMonkey,
+            "神雀": DivineSparrow,
+            "歬牛": PloddingOx,
+            "SW": SwallowsWings
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -290,7 +296,7 @@ export class BoardInfo {
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             null, "MK", "VM", "OX", null, "VP", "VH", "BN", null, null, "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", null, null, "BN", "VH", "VP", null, "OX", "VM", "MK", null,
             null, null, null, "WN", "RE", " M", null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, " M", "RE", "WN", null, null, null,
-            "EC", null, "EB", null, "OW", "CM", "CS", null, "BM", "BT", "OC", null, "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", null, "OC", "BT", "BM", null, "CS", "CM", "OW", null, "EB", null, "EC",
+            "EC", null, "EB", null, "OW", "CM", "CS", "SW", "BM", "BT", "OC", null, "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", null, "OC", "BT", "BM", "SW", "CS", "CM", "OW", null, "EB", null, "EC",
             "TC", null, "SX", "DO", "FH", "VB", "AB", "EW", null, "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", null, "EW", null, "VB", "FH", "DO", "SX", null, "TC",
             "WC", "WH", "犬L", "SM", "PR", null, "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", null, "PR", "SM", "犬R", "WH", "WC",
             null, null, " B", " R", "WF", null, null, null, "SO", null, null, null, "RH", "HE", "VO", null, null, "DV", "DS", null, null, "VO",  "HE", "RH", null, null, null, "SO", null, null, null, "WF", " R", " B", null, null,
