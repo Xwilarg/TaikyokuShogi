@@ -202,6 +202,17 @@ import { LiberatedHorse } from './Piece/Impl/LiberatedHorse';
 import { VerticalBear } from './Piece/Impl/VerticalBear';
 import { VerticalSoldier } from './Piece/Impl/VerticalSoldier';
 import { EarthDragon } from './Piece/Impl/EarthDragon';
+import { SilverChariot } from './Piece/Impl/SilverChariot';
+import { StoneChariot } from './Piece/Impl/StoneChariot';
+import { SideSoldier } from './Piece/Impl/SideSoldier';
+import { GoldChariot } from './Piece/Impl/GoldChariot';
+import { BoarSoldier } from './Piece/Impl/BoarSoldier';
+import { LeopardSoldier } from './Piece/Impl/LeopardSoldier';
+import { BearSoldier } from './Piece/Impl/BearSoldier';
+import { FreePup } from './Piece/Impl/FreePup';
+import { FreeOx } from './Piece/Impl/FreeOx';
+import { FreeHorse } from './Piece/Impl/FreeHorse';
+import { FreePig } from './Piece/Impl/FreePig';
 
 export class BoardInfo {
     constructor() {
@@ -409,7 +420,18 @@ export class BoardInfo {
             "LH": LiberatedHorse,
             "VE": VerticalBear,
             "VR": VerticalSoldier,
-            "ED": EarthDragon
+            "ED": EarthDragon,
+            "SV": SilverChariot,
+            "CI": StoneChariot,
+            "SL": SideSoldier,
+            "GC": GoldChariot,
+            "BS": BoarSoldier,
+            "LP": LeopardSoldier,
+            "BE": BearSoldier,
+            "FP": FreePup,
+            "奔牛": FreeOx,
+            "奔馬": FreeHorse,
+            "奔豚": FreePig
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -417,13 +439,13 @@ export class BoardInfo {
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             "LC", "MK", "VM", "OX", null, "VP", "VH", "BN", "DH", "DK", "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", "DK", "DH", "BN", "VH", "VP", null, "OX", "VM", "MK", "RC",
-            "CH", null, "VR", "WN", "RE", " M", null, null, "GN", null, "EA", null, "SG", null, " T", null, " I", null, null, " I", null, " T", null, "SG", null, "EA", null, "GN", null, null, " M", "RE", "WN", "VR", null, "CH",
+            "CH", "SL", "VR", "WN", "RE", " M", null, null, "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", null, null, " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", null, null, " M", "RE", "WN", "VR", "SL", "CH",
             "EC", "BL", "EB", "HO", "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", "HO", "EB", "VI", "EC",
             "TC", null, "SX", "DO", "FH", "VB", "AB", "EW", "LH", "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", "LH", "EW", null, "VB", "FH", "DO", "SX", null, "TC",
             "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
-            null, null, " B", " R", "WF", null, null, "VT", "SO", null, "CL", null, "RH", "HE", "VO", null, null, "DV", "DS", null, null, "VO",  "HE", "RH", null, "CL", null, "SO", "VT", null, null, "WF", " R", " B", null, null,
-            null, "VE", null, "PI", "CG", "PG", " H", " O", null, "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", null, null, "CT", null, null, "SR", "SA", null, " O", " H", "PG", "CG", "PI", null, "VE", null,
-            null, "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", null, "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, null, "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", null,
+            "CI", null, " B", " R", "WF", null, null, "VT", "SO", null, "CL", null, "RH", "HE", "VO", null, null, "DV", "DS", null, null, "VO",  "HE", "RH", null, "CL", null, "SO", "VT", null, null, "WF", " R", " B", null, "CI",
+            "SV", "VE", null, "PI", "CG", "PG", " H", " O", null, "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", null, null, "CT", null, null, "SR", "SA", null, " O", " H", "PG", "CG", "PI", null, "VE", "SV",
+            "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
             "RV", "WE", "TD", "FS", "CO", "RA", null, "MS", "RP", "RU", null, null, "RT", "BA", "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", "BA", "RT", null, null, "RU", "RP", "MS", null, "RA", "CO", "FS", "TD", "FG", "RV",
             " L", "TS", "RR", " W", "DM", null, null, "BC", null, null, "ED", "CD", null, " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", null, null, "ED", null, null, "BC", null, null, "DM", " W", "RR", "WT", " L"
         ];
