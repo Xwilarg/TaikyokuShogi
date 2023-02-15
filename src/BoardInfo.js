@@ -225,6 +225,7 @@ import { VerticalWolf } from './Piece/Impl/VerticalWolf';
 import { SideSerpent } from './Piece/Impl/SideSerpent';
 import { CloudEagle } from './Piece/Impl/CloudEagle';
 import { GooseWing } from './Piece/Impl/GooseWing';
+import { Knight } from './Piece/Impl/Knight';
 
 export class BoardInfo {
     constructor() {
@@ -455,7 +456,8 @@ export class BoardInfo {
             "VW": VerticalWolf,
             "SS": SideSerpent,
             "CE": CloudEagle,
-            "鴻翼": GooseWing
+            "鴻翼": GooseWing,
+            " N": Knight
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -468,7 +470,7 @@ export class BoardInfo {
             "TC", "VW", "SX", "DO", "FH", "VB", "AB", "EW", "LH", "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", "LH", "EW", null, "VB", "FH", "DO", "SX", "VW", "TC",
             "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
             "CI", "CE", " B", " R", "WF", null, null, "VT", "SO", "LS", "CL", "CR", "RH", "HE", "VO", "GD", null, "DV", "DS", null, "GD", "VO",  "HE", "RH", "CR", "CL", "LS", "SO", "VT", null, null, "WF", " R", " B", "CE", "CI",
-            "SV", "VE", null, "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", null, null, "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", null, "VE", "SV",
+            "SV", "VE", " N", "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", null, null, "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", " N", "VE", "SV",
             "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
             "RV", "WE", "TD", "FS", "CO", "RA", "FO", "MS", "RP", "RU", "SS", "GR", "RT", "BA", "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", "BA", "RT", "GR", "SS", "RU", "RP", "MS", "FO", "RA", "CO", "FS", "TD", "FG", "RV",
             " L", "TS", "RR", " W", "DM", null, null, "BC", null, null, "ED", "CD", null, " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", null, null, "ED", null, null, "BC", null, null, "DM", " W", "RR", "WT", " L"
