@@ -225,6 +225,7 @@ import { VerticalWolf } from './Piece/Impl/VerticalWolf';
 import { SideSerpent } from './Piece/Impl/SideSerpent';
 import { CloudEagle } from './Piece/Impl/CloudEagle';
 import { GooseWing } from './Piece/Impl/GooseWing';
+import { HorseSoldier } from './Piece/Impl/HorseSoldier';
 
 export class BoardInfo {
     constructor() {
@@ -455,7 +456,8 @@ export class BoardInfo {
             "VW": VerticalWolf,
             "SS": SideSerpent,
             "CE": CloudEagle,
-            "鴻翼": GooseWing
+            "鴻翼": GooseWing,
+            "HS": HorseSoldier,
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -463,7 +465,7 @@ export class BoardInfo {
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             "LC", "MK", "VM", "OX", null, "VP", "VH", "BN", "DH", "DK", "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", "DK", "DH", "BN", "VH", "VP", null, "OX", "VM", "MK", "RC",
-            "CH", "SL", "VR", "WN", "RE", " M", "SD", null, "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", null, "GE", " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", null, "SD", " M", "RE", "WN", "VR", "SL", "CH",
+            "CH", "SL", "VR", "WN", "RE", " M", "SD", "HS", "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", null, "GE", " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", "HS", "SD", " M", "RE", "WN", "VR", "SL", "CH",
             "EC", "BL", "EB", "HO", "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", "HO", "EB", "VI", "EC",
             "TC", "VW", "SX", "DO", "FH", "VB", "AB", "EW", "LH", "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", "LH", "EW", null, "VB", "FH", "DO", "SX", "VW", "TC",
             "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
