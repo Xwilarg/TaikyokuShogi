@@ -226,6 +226,28 @@ import { SideSerpent } from './Piece/Impl/SideSerpent';
 import { CloudEagle } from './Piece/Impl/CloudEagle';
 import { GooseWing } from './Piece/Impl/GooseWing';
 import { HorseSoldier } from './Piece/Impl/HorseSoldier';
+import { SpearGeneral } from './Piece/Impl/SpearGeneral';
+import { BurningGeneral } from './Piece/Impl/BurningGeneral';
+import { BeastBird } from './Piece/Impl/BeastBird';
+import { CaptiveBird } from './Piece/Impl/CaptiveBird';
+import { LongbowSoldier } from './Piece/Impl/LongbowSoldier';
+import { GreatLeopard } from './Piece/Impl/GreatLeopard';
+import { ThunderRunner } from './Piece/Impl/ThunderRunner';
+import { FireDragon } from './Piece/Impl/FireDragon';
+import { WaterDragon } from './Piece/Impl/WaterDragon';
+import { LongbowGeneral } from './Piece/Impl/LongbowGeneral';
+import { RightPhoenix } from './Piece/Impl/RightPhoenix';
+import { PeacefulMountain } from './Piece/Impl/PeacefulMountain';
+import { FreeDemon } from './Piece/Impl/FreeDemon';
+import { FreeDreamEater } from './Piece/Impl/FreeDreamEater';
+import { FreeFire } from './Piece/Impl/FreeFire';
+import { RunningDragon } from './Piece/Impl/RunningDragon';
+import { GreatShark } from './Piece/Impl/GreatShark';
+import { CrossbowGeneral } from './Piece/Impl/CrossbowGeneral';
+import { PlayfulCockatoo } from './Piece/Impl/PlayfulCockatoo';
+
+
+
 
 export class BoardInfo {
     constructor() {
@@ -458,22 +480,43 @@ export class BoardInfo {
             "CE": CloudEagle,
             "鴻翼": GooseWing,
             "HS": HorseSoldier,
+            "SG": SpearGeneral,
+            "BG": BurningGeneral,
+            "BB": BeastBird,
+            "CP": CaptiveBird,
+            "LS": LongbowSoldier,
+            "GRL": GreatLeopard,
+            "THR": ThunderRunner,
+            "FD": FireDragon,
+            "WD": WaterDragon,
+            "LBG": LongbowGeneral,
+            "RPX": RightPhoenix,
+            "PCM": PeacefulMountain,
+            "FDO": FreeDemon,
+            "FDE": FreeDreamEater,
+            "FRF": FreeFire,
+            "RDG": RunningDragon,
+            "GSH": GreatShark,
+            "CBG": CrossbowGeneral,
+            "PFC": PlayfulCockatoo,
+
+
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
         this.board =  [
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
-            "LC", "MK", "VM", "OX", null, "VP", "VH", "BN", "DH", "DK", "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", "DK", "DH", "BN", "VH", "VP", null, "OX", "VM", "MK", "RC",
+            "LC", "MK", "VM", "OX", "LS", "VP", "VH", "BN", "DH", "DK", "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", "DK", "DH", "BN", "VH", "VP", "LS", "OX", "VM", "MK", "RC",
             "CH", "SL", "VR", "WN", "RE", " M", "SD", "HS", "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", null, "GE", " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", "HS", "SD", " M", "RE", "WN", "VR", "SL", "CH",
             "EC", "BL", "EB", "HO", "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", "HO", "EB", "VI", "EC",
             "TC", "VW", "SX", "DO", "FH", "VB", "AB", "EW", "LH", "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", "LH", "EW", null, "VB", "FH", "DO", "SX", "VW", "TC",
             "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
             "CI", "CE", " B", " R", "WF", null, null, "VT", "SO", "LS", "CL", "CR", "RH", "HE", "VO", "GD", null, "DV", "DS", null, "GD", "VO",  "HE", "RH", "CR", "CL", "LS", "SO", "VT", null, null, "WF", " R", " B", "CE", "CI",
             "SV", "VE", null, "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", null, null, "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", null, "VE", "SV",
-            "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, null, null, " C", null, null, " C", null, null, null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
+            "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, "WD", "FD", " C", null, null, " C", "FD", "WD", null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
             "RV", "WE", "TD", "FS", "CO", "RA", "FO", "MS", "RP", "RU", "SS", "GR", "RT", "BA", "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", "BA", "RT", "GR", "SS", "RU", "RP", "MS", "FO", "RA", "CO", "FS", "TD", "FG", "RV",
-            " L", "TS", "RR", " W", "DM", null, null, "BC", null, null, "ED", "CD", null, " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", null, null, "ED", null, null, "BC", null, null, "DM", " W", "RR", "WT", " L"
+            " L", "TS", "RR", " W", "DM", null, null, "BC", null, "FDO", "ED", "CD", "FDE", " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", "FDE", null, "ED", "FDO", null, "BC", null, null, "DM", " W", "RR", "WT", " L"
         ];
     }
 
