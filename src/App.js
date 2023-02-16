@@ -50,7 +50,7 @@ class App {
     attachListeners() {
         const cells = this.rootElement.querySelectorAll(".cell");
         cells.forEach((cell) => {
-            cell.onclick = (_) => {
+            cell.onclick = () => {
                 const id = parseInt(cell.dataset.id);
                 const value = this.state.G.cells[id];
                 if (cell.classList.contains("possible-move") || cell.classList.contains("possible-attack")) {
