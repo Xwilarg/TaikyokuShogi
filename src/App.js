@@ -1,7 +1,7 @@
 import { Client } from 'boardgame.io/client';
 import { BoardInfo } from './BoardInfo';
 import { Game } from './Game';
-import { Move_Walk } from './Piece/MoveType';
+import { Move_Jump, Move_Walk } from './Piece/MoveType';
 
 class App {
     constructor(rootElement) {
@@ -75,7 +75,7 @@ class App {
                         const max = (36 * 36) - 1;
                         pieceInfo.moves.forEach(m => {
                             let previous = id;
-                            if (m.moveType == Move_Walk) {
+                            if (m.moveType === Move_Walk || m.moveType === Move_Jump) {
                                 const xPos = m.pos.x * (currPlayer === '0' ? -1 : 1);
                                 const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1);
                                 for (let i = 1; i <= m.distance; i++) {
@@ -91,7 +91,10 @@ class App {
                                         {
                                             cells[nextTile].classList.add("possible-attack");
                                         }
-                                        break;
+                                        if (m.moveType === Move_Walk) // Walk move need to be continious
+                                        {
+                                            break;    
+                                        }
                                     }
                                     else
                                     {
