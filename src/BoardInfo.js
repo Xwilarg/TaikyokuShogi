@@ -332,7 +332,7 @@ import { CrossbowSoldier } from "./Piece/Impl/CrossbowSoldier";
 import { BurningSoldier } from "./Piece/Impl/BurningSoldier";
 import { Lance } from "./Piece/Impl/Lance";
 import { Oxcart } from "./Piece/Impl/Oxcart";
-import { SavageTiger } from "./Piece/Impl/Savagetiger";
+import { SavageTiger } from "./Piece/Impl/SavageTiger";
 import { ReverseChariot } from "./Piece/Impl/ReverseChariot";
 import { SideDragon } from "./Piece/Impl/SideDragon";
 import { MountainWitch } from "./Piece/Impl/MountainWitch";
