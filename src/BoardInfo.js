@@ -245,8 +245,6 @@ import { RunningDragon } from './Piece/Impl/RunningDragon';
 import { GreatShark } from './Piece/Impl/GreatShark';
 import { CrossbowGeneral } from './Piece/Impl/CrossbowGeneral';
 import { PlayfulCockatoo } from './Piece/Impl/PlayfulCockatoo';
-import { Knight } from './Piece/Impl/Knight';
-=======
 import { EarthGeneral } from "./Piece/Impl/EarthGeneral";
 import { GoBetween } from "./Piece/Impl/GoBetween";
 import { IronGeneral } from "./Piece/Impl/IronGeneral";
