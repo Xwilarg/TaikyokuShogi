@@ -1,26 +1,31 @@
 {
-  "name": "taikyokushogi",
-  "version": "1.0.0",
-  "description": "Implement of Taikyoku Shogi, playable online",
-  "main": "index.js",
-  "scripts": {
-    "start": "parcel index.html --open"
-  },
-  "browserslist": "defaults and supports async-functions",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Xwilarg/TaikyokuShogi.git"
-  },
-  "author": "Xwilarg",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Xwilarg/TaikyokuShogi/issues"
-  },
-  "homepage": "https://github.com/Xwilarg/TaikyokuShogi#readme",
-  "dependencies": {
-    "boardgame.io": "^0.49.11"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5"
-  }
+    "name": "taikyokushogi",
+    "version": "1.0.0",
+    "description": "Implement of Taikyoku Shogi, playable online",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "build": "parcel build index.html",
+        "lint": "eslint --fix . && prettier --write --tab-width 4 --print-width 150 .",
+        "lint-test": "eslint ."
+    },
+    "browserslist": "defaults and supports async-functions",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Xwilarg/TaikyokuShogi.git"
+    },
+    "author": "Xwilarg",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Xwilarg/TaikyokuShogi/issues"
+    },
+    "homepage": "https://github.com/Xwilarg/TaikyokuShogi#readme",
+    "dependencies": {
+        "boardgame.io": "^0.49.11"
+    },
+    "devDependencies": {
+        "eslint": "^8.34.0",
+        "parcel-bundler": "^1.12.5",
+        "prettier": "^2.8.4"
+    }
 }

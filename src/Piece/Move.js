@@ -5,4 +5,3 @@ export class Move {
         this.distance = distance;
     }
 }
-  

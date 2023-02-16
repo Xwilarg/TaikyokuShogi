@@ -4,4 +4,3 @@ export class Vector2 {
         this.y = y;
     }
 }
-  
