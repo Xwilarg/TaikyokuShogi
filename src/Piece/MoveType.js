@@ -1,2 +1,2 @@
-export const Move_Walk = 0
-export const Move_Jump = 1
+export const moveWalk = 0;
+export const moveJump = 1;

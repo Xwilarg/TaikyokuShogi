@@ -1,121 +1,127 @@
-import { Client } from 'boardgame.io/client'
-import { BoardInfo } from './BoardInfo'
-import { Game } from './Game'
-import { Move_Jump, Move_Walk } from './Piece/MoveType'
+import { Client } from "boardgame.io/client";
+import { BoardInfo } from "./BoardInfo";
+import { Game } from "./Game";
+import { moveJump, moveWalk } from "./Piece/MoveType";
 
 class App {
-    constructor (rootElement) {
-        this.client = Client({ game: Game })
-        this.client.start()
-        this.rootElement = rootElement
+    constructor(rootElement) {
+        this.client = Client({ game: Game });
+        this.client.start();
+        this.rootElement = rootElement;
 
-        this.createBoard()
-        this.attachListeners()
+        this.createBoard();
+        this.attachListeners();
 
-        this.client.subscribe(state => {
-            this.state = state
-            this.update(state)
-        })
+        this.client.subscribe((state) => {
+            this.state = state;
+            this.update(state);
+        });
 
-        this.selected = null
+        this.selected = null;
     }
 
-    createBoard () {
-        const size = 36
-        const rows = []
+    createBoard() {
+        const size = 36;
+        const rows = [];
         for (let i = 0; i < size; i++) {
-            const cells = []
+            const cells = [];
             for (let j = 0; j < size; j++) {
-                const id = size * i + j
-                cells.push(`<td class="cell" data-id="${id}"></td>`)
+                const id = size * i + j;
+                cells.push(`<td class="cell" data-id="${id}"></td>`);
             }
-            rows.push(`<tr>${cells.join('')}</tr>`)
+            rows.push(`<tr>${cells.join("")}</tr>`);
         }
 
         this.rootElement.innerHTML = `
-            <table>${rows.join('')}</table>
-        `
+            <table>${rows.join("")}</table>
+        `;
     }
 
-    cleanTiles () {
-        const cells = this.rootElement.querySelectorAll('.cell')
-        cells.forEach(e => {
-            e.classList.remove('possible-move')
-            e.classList.remove('possible-attack')
-            e.classList.remove('selected')
-        })
-        this.selected = null
+    cleanTiles() {
+        const cells = this.rootElement.querySelectorAll(".cell");
+        cells.forEach((e) => {
+            e.classList.remove("possible-move");
+            e.classList.remove("possible-attack");
+            e.classList.remove("selected");
+        });
+        this.selected = null;
     }
 
-    attachListeners () {
-        const cells = this.rootElement.querySelectorAll('.cell')
-        cells.forEach(cell => {
+    attachListeners() {
+        const cells = this.rootElement.querySelectorAll(".cell");
+        cells.forEach((cell) => {
             cell.onclick = (_) => {
-                const id = parseInt(cell.dataset.id)
-                const value = this.state.G.cells[id]
-                if (cell.classList.contains('possible-move') || cell.classList.contains('possible-attack')) { // We clicked on a highlighted tile showing an available move
-                    this.client.moves.movePiece(this.selected, id)
-                    this.cleanTiles()
-                } else if (value !== null) { // We clicked on a piece
-                    this.cleanTiles()
+                const id = parseInt(cell.dataset.id);
+                const value = this.state.G.cells[id];
+                if (cell.classList.contains("possible-move") || cell.classList.contains("possible-attack")) {
+                    // We clicked on a highlighted tile showing an available move
+                    this.client.moves.movePiece(this.selected, id);
+                    this.cleanTiles();
+                } else if (value !== null) {
+                    // We clicked on a piece
+                    this.cleanTiles();
 
-                    const currPlayer = this.state.ctx.currentPlayer
-                    if (value[0] === currPlayer) { // This piece belong to the current player
+                    const currPlayer = this.state.ctx.currentPlayer;
+                    if (value[0] === currPlayer) {
+                        // This piece belong to the current player
                         // Highlight the current piece
-                        cell.classList.add('selected')
-                        this.selected = id
+                        cell.classList.add("selected");
+                        this.selected = id;
 
-                        const info = new BoardInfo()
-                        const piece = value.substring(1)
-                        const pieceInfo = info.getPiece(piece)
+                        const info = new BoardInfo();
+                        const piece = value.substring(1);
+                        const pieceInfo = info.getPiece(piece);
 
                         // Display moves
-                        const max = (36 * 36) - 1
-                        pieceInfo.moves.forEach(m => {
-                            let previous = id
-                            if (m.moveType === Move_Walk || m.moveType === Move_Jump) {
-                                const xPos = m.pos.x * (currPlayer === '0' ? -1 : 1)
-                                const yPos = m.pos.y * (currPlayer === '1' ? -1 : 1)
+                        const max = 36 * 36 - 1;
+                        pieceInfo.moves.forEach((m) => {
+                            let previous = id;
+                            if (m.moveType === moveWalk || m.moveType === moveJump) {
+                                const xPos = m.pos.x * (currPlayer === "0" ? -1 : 1);
+                                const yPos = m.pos.y * (currPlayer === "1" ? -1 : 1);
                                 for (let i = 1; i <= m.distance; i++) {
-                                    const nextTile = id + (yPos * i * 36) + (xPos * i)
-                                    if (nextTile < 0 || nextTile > max || // We are out of the board on the lines
-                                        Math.abs((nextTile % 36) - (previous % 36)) > 1) // We are out of board on the columns
-                                    {
-                                        break
+                                    const nextTile = id + yPos * i * 36 + xPos * i;
+                                    if (
+                                        nextTile < 0 ||
+                                        nextTile > max || // We are out of the board on the lines
+                                        Math.abs((nextTile % 36) - (previous % 36)) > 1
+                                    ) {
+                                        // We are out of board on the columns
+                                        break;
                                     } else if (this.state.G.cells[nextTile] !== null) {
                                         if (this.state.G.cells[nextTile][0] !== value[0]) {
-                                            cells[nextTile].classList.add('possible-attack')
+                                            cells[nextTile].classList.add("possible-attack");
                                         }
-                                        if (m.moveType === Move_Walk) // Walk move need to be continious
-                                        {
-                                            break
+                                        if (m.moveType === moveWalk) {
+                                            // Walk move need to be continious
+                                            break;
                                         }
                                     } else {
-                                        cells[nextTile].classList.add('possible-move')
-                                        previous = nextTile
+                                        cells[nextTile].classList.add("possible-move");
+                                        previous = nextTile;
                                     }
                                 }
                             }
-                        })
+                        });
                     }
                 }
-            }
-        })
+            };
+        });
     }
 
-    update (state) {
-        const info = new BoardInfo()
-        const cells = this.rootElement.querySelectorAll('.cell')
-        cells.forEach(cell => {
-            const cellId = parseInt(cell.dataset.id)
-            const cellValue = state.G.cells[cellId]
+    update(state) {
+        const info = new BoardInfo();
+        const cells = this.rootElement.querySelectorAll(".cell");
+        cells.forEach((cell) => {
+            const cellId = parseInt(cell.dataset.id);
+            const cellValue = state.G.cells[cellId];
 
             if (cellValue !== null) {
-                const player = cellValue[0]
-                const piece = cellValue.substring(1)
+                const player = cellValue[0];
+                const piece = cellValue.substring(1);
 
-                const size = 40
-                if (player === '0') {
+                const size = 40;
+                if (player === "0") {
                     cell.innerHTML = `
                     <svg width="${size}" height="${size}">
                         <line x1="0" y1="0" x2="${size}" y2="0" stroke="black" />
@@ -128,7 +134,7 @@ class App {
 
                         <text x="50%" y="50%" class="small">${info.getPiece(piece).name}</text>
                     </svg>
-                    `
+                    `;
                 } else {
                     cell.innerHTML = `
                     <svg width="${size}" height="${size}">
@@ -142,13 +148,13 @@ class App {
 
                         <text x="50%" y="80%" class="small">${info.getPiece(piece).name}</text>
                     </svg>
-                    `
+                    `;
                 }
             } else {
-                cell.innerHTML = ''
+                cell.innerHTML = "";
             }
-        })
+        });
     }
 }
 
-const app = new App(document.getElementById('app'))
+new App(document.getElementById("app"));
