@@ -1,5 +1,6 @@
 import { EarthGeneral } from "./Piece/Impl/EarthGeneral";
 import { GoBetween } from "./Piece/Impl/GoBetween";
+import { IronGeneral } from "./Piece/Impl/IronGeneral";
 import { Pawn } from "./Piece/Impl/Pawn";
 import { StoneGeneral } from "./Piece/Impl/StoneGeneral";
 import { Dog } from "./Piece/Impl/Dog";
