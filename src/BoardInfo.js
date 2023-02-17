@@ -254,8 +254,12 @@ import { RunningHorse } from "./Piece/Impl/RunningHorse";
 import { MountainFalcon } from "./Piece/Impl/MountainFalcon";
 import { LeftMountainEagle } from "./Piece/Impl/LeftMountainEagle";
 import { RightMountainEagle } from "./Piece/Impl/RightMountainEagle";
-import { LittleTurtle } from "."
-
+import { LittleTurtle } from "./Piece/Impl/LittleTurtle";
+import { GreatStag} from "./Piece/Impl/GreatStag"
+import { KirinMaster } from "./Piece/Impl/KirinMaster";
+import { GreatTurtle } from "./Piece/Impl/GreatTurtle";
+import { PhoenixMaster} from "./Piece/Impl/PhoenixMaster"
+import { GreatMaster} from "./Piece/Impl/GreatMaster" 
 export class BoardInfo {
     constructor() {
         // prettier-ignore
@@ -516,7 +520,12 @@ export class BoardInfo {
             "MF": MountainFalcon,
             "ML": LeftMountainEagle,
             "MR": RightMountainEagle,
-            "LL": LittleTurtle
+            "LL": LittleTurtle,
+            "GS": GreatStag,
+            "KM": KirinMaster,
+            "GT": GreatTurtle,
+            "PM": PhoenixMaster,
+            "GM": GreatMaster,
 
 
 
@@ -528,13 +537,13 @@ export class BoardInfo {
             null, null, null, null, null, " D", null, null, null, null, "GB", null, null, null, " D", null, null, null, null, null, null, " D", null, null, null, "GB", null, null, null, null, " D", null, null, null, null, null,
             " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P", " P",
             "LC", "MK", "VM", "OX", "LB", "VP", "VH", "BN", "DH", "DK", "SE", null, null, "SP", "VL", "TG", "SC", null, null, "SC", "TG", "VL", "SP", null, null, "SE", "DK", "DH", "BN", "VH", "VP", "LB", "OX", "VM", "MK", "RC",
-            "CH", "SL", "VR", "WN", "RE", " M", "SD", "HS", "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", null, "GE", " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", "HS", "SD", " M", "RE", "WN", "VR", "SL", "CH",
+            "CH", "SL", "VR", "WN", "RE", " M", "SD", "HS", "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", "GM", "GE", " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", "HS", "SD", " M", "RE", "WN", "VR", "SL", "CH",
             "EC", "BL", "EB", "HO", "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", "HO", "EB", "VI", "EC",
             "TC", "VW", "SX", "DO", "FH", "VB", "AB", "EW", "LH", "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", "LH", "EW", null, "VB", "FH", "DO", "SX", "VW", "TC",
-            "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", "KR", null, null, "LL", null, null, " F", "WG", "BI", "ST", "FY", "PS", "FD", "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
+            "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", "KR", null, "GT", "LL", null, null, " F", "WG", "BI", "ST", "FY", "PS", "FD", "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
             "CI", "CE", " B", " R", "WF", "FC", "MF", "VT", "SO", "LS", "CL", "CR", "RH", "HE", "VO", "GD", null, "DV", "DS", null, "GD", "VO",  "HE", "RH", "CR", "CL", "LS", "SO", "VT", "MF", "FC", "WF", " R", " B", "CE", "CI",
-            "SV", "VE", " N", "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", "PH", null, "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", " N", "VE", "SV",
-            "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, "WA", "FI", " C", null, null, " C", "FI", "WD", null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
+            "SV", "VE", " N", "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", "GS", null, "WL", null, null, "WL", "PH", "GS", "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", " N", "VE", "SV",
+            "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, "WA", "FI", " C", "KM", "PM", " C", "FI", "WA", null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
             "RV", "WE", "TD", "FS", "CO", "RA", "FO", "MS", "RP", "RU", "SS", "GR", "RT", "BA", "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", "BA", "RT", "GR", "SS", "RU", "RP", "MS", "FO", "RA", "CO", "FS", "TD", "FG", "RV",
             " L", "TS", "RR", " W", "DM", "ML", null, "BC", "HR", "FR", "ED", "CD", "FT", " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", "FT", null, "ED", "FR", "HR", "BC", null, "MR", "DM", " W", "RR", "WT", " L"
         ];
