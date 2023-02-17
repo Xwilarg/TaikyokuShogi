@@ -246,6 +246,15 @@ import { RunningDragon } from "./Piece/Impl/RunningDragon";
 import { GreatShark } from "./Piece/Impl/GreatShark";
 import { CrossbowGeneral } from "./Piece/Impl/CrossbowGeneral";
 import { PlayfulCockatoo } from "./Piece/Impl/PlayfulCockatoo";
+import { FlyingDragon } from "./Piece/Impl/FlyingDragon";
+import { Kirin } from "./Piece/Impl/Kirin";
+import { Phoenix } from "./Piece/Impl/Phoenix";
+import { FlyingCat } from "./Piece/Impl/FlyingCat";
+import { RunningHorse } from "./Piece/Impl/RunningHorse";
+import { MountainFalcon } from "./Piece/Impl/MountainFalcon";
+import { LeftMountainEagle } from "./Piece/Impl/LeftMountainEagle";
+import { RightMountainEagle } from "./Piece/Impl/RightMountainEagle";
+import { LittleTurtle } from "."
 
 export class BoardInfo {
     constructor() {
@@ -498,7 +507,19 @@ export class BoardInfo {
             "大鱗": GreatShark,
             "弓将": CrossbowGeneral,
             "遊䳇": PlayfulCockatoo,
-            " N": Knight
+            " N": Knight,
+            "FD": FlyingDragon,
+            "KR": Kirin,
+            "PH": Phoenix,
+            "FC": FlyingCat,
+            "HR": RunningHorse,
+            "MF": MountainFalcon,
+            "ML": LeftMountainEagle,
+            "MR": RightMountainEagle,
+            "LL": LittleTurtle
+
+
+
         }
 
         // https://en.wikipedia.org/wiki/Taikyoku_shogi#Setup
@@ -510,12 +531,12 @@ export class BoardInfo {
             "CH", "SL", "VR", "WN", "RE", " M", "SD", "HS", "GN", null, "EA", "BS", "SG", "LP", " T", "BE", " I", null, "GE", " I", "BE", " T", "LP", "SG", "BS", "EA", null, "GN", "HS", "SD", " M", "RE", "WN", "VR", "SL", "CH",
             "EC", "BL", "EB", "HO", "OW", "CM", "CS", "SW", "BM", "BT", "OC", "SF", "BB", "OR", "SQ", "SN", "RD", null, null, "RD", "SN", "SQ", "OR", "BB", "SF", "OC", "BT", "BM", "SW", "CS", "CM", "OW", "HO", "EB", "VI", "EC",
             "TC", "VW", "SX", "DO", "FH", "VB", "AB", "EW", "LH", "CK", "OM", "CC", "WS", "ES", "VS", "NT", "TF", null, null, "TF", "NT", "VS", "SU", "NB", "CC", "OM", "CK", "LH", "EW", null, "VB", "FH", "DO", "SX", "VW", "TC",
-            "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", null, null, null, null, null, null, " F", "WG", "BI", "ST", "FY", "PS", null, "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
-            "CI", "CE", " B", " R", "WF", null, null, "VT", "SO", "LS", "CL", "CR", "RH", "HE", "VO", "GD", null, "DV", "DS", null, "GD", "VO",  "HE", "RH", "CR", "CL", "LS", "SO", "VT", null, null, "WF", " R", " B", "CE", "CI",
-            "SV", "VE", " N", "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", null, null, "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", " N", "VE", "SV",
+            "WC", "WH", "犬L", "SM", "PR", "WB", "FL", "EG", null, "PS", "FY", "ST", "BI", "WG", " F", "KR", null, null, "LL", null, null, " F", "WG", "BI", "ST", "FY", "PS", "FD", "EG", "FL", "WB", "PR", "SM", "犬R", "WH", "WC",
+            "CI", "CE", " B", " R", "WF", "FC", "MF", "VT", "SO", "LS", "CL", "CR", "RH", "HE", "VO", "GD", null, "DV", "DS", null, "GD", "VO",  "HE", "RH", "CR", "CL", "LS", "SO", "VT", "MF", "FC", "WF", " R", " B", "CE", "CI",
+            "SV", "VE", " N", "PI", "CG", "PG", " H", " O", "CN", "SA", "SR", null, null, "CT", null, null, "WL", null, null, "WL", "PH", null, "CT", null, null, "SR", "SA", "CN", " O", " H", "PG", "CG", "PI", " N", "VE", "SV",
             "GC", "SI", "RN", "RW", null, null, "LT", "LE", "BO", "WD", "FP", "RB", "OK", null, "WA", "FI", " C", null, null, " C", "FI", "WD", null, "OK", null, "FP", "WD", "BO", "RI", "TT", null, null, "RW", "RN", "SI", "GC",
             "RV", "WE", "TD", "FS", "CO", "RA", "FO", "MS", "RP", "RU", "SS", "GR", "RT", "BA", "BD", "WR", " S", "NK", "DE", " S", "GU", "YA", "BA", "RT", "GR", "SS", "RU", "RP", "MS", "FO", "RA", "CO", "FS", "TD", "FG", "RV",
-            " L", "TS", "RR", " W", "DM", null, null, "BC", null, "FR", "ED", "CD", "FT", " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", "FT", null, "ED", "FR", null, "BC", null, null, "DM", " W", "RR", "WT", " L"
+            " L", "TS", "RR", " W", "DM", "ML", null, "BC", "HR", "FR", "ED", "CD", "FT", " Q", "RS", "LG", " G", " K", "CP", " G", "RG", "RS", " Q", "FT", null, "ED", "FR", "HR", "BC", null, "MR", "DM", " W", "RR", "WT", " L"
         ];
     }
 
