@@ -4,7 +4,7 @@ import { Move_Jump } from "../MoveType";
 import { Piece } from "../Piece";
 import { Vector2 } from "../Vector2";
 
-export const GreatTurtle = new Piece("鳳師", "Phoenix-Master","FFfGsW3vWW",[
+export const PhoenixMaster = new Piece("鳳師", "Phoenix-Master","FFfGsW3vWW",[
 	new Move(Move_Walk, new Vector2(-1,1), Infinity),
 	new Move(Move_Walk, new Vector2(1,1), Infinity),
 	new Move(Move_Walk, new Vector2(0,1), Infinity),
